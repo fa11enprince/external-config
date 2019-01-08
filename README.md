@@ -1,20 +1,20 @@
 # external-config
-Spring Boot�̊O���ݒ�l(application.properties, application.yml)�̌��؃R�[�h  
+Spring Bootの外部設定値(application.properties, application.yml)の検証コード  
 
-### �O�����
-- Java8 & Spring Boot 2
-- MySQL���|�[�g3307��MariaDB���|�[�g3306�ɃC���X�g�[������Ă��邱��
-- MySQL��MariaDB�̃��[�U��root/root�ł��邱��
-���������Aapplication.yml��������������Ζ�肠��܂���B  
+### 前提条件
+- Java8 & Spring Boot 2 & lombok
+- MySQLがポート3307とMariaDBがポート3306にインストールされていること
+- MySQLとMariaDBのユーザがroot/rootであること
+※ただし、application.ymlさえ書き換えれば問題ありません。  
 
-���ϐ�
+環境変数
 SPRING_PROFILES_ACTIVE
-��
+に
 mysql or mariadb
-���Z�b�g����
+をセットする
 
-### �o�͌���
-SPRING_PROFILES_ACTIVE��mariadb�̂Ƃ�(�vEclipse�ċN��)
+### 出力結果
+SPRING_PROFILES_ACTIVEがmariadbのとき(要Eclipse再起動)
 ```
 -------------------------------------------
 active profiles : mariadb
@@ -28,7 +28,7 @@ app.myProperty.port : 8080
 -------------------------------------------
 ```
 
-SPRING_PROFILES_ACTIVE��mysql�̂Ƃ�(�vEclipse�ċN��)
+SPRING_PROFILES_ACTIVEがmysqlのとき(要Eclipse再起動)
 ```
 -------------------------------------------
 active profiles : mysql
